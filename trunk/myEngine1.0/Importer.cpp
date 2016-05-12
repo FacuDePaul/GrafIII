@@ -175,7 +175,6 @@ void Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial
 				guardar el hueso en nuestro map[]
 				setearle el hueso al mesh.
 			*/
-
 			aiBone* bone = pkAiMesh->mBones[i];
 			BoneInfo* bInfo = new BoneInfo();
 			for (int j = 0; j < bone->mNumWeights; j++){
@@ -206,7 +205,9 @@ void Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial
 		kMesh.SetTexture(TheTexture);
 	}
 }
-
+/*
+ *  Documentation: http://ogldev.atspace.co.uk/www/tutorial38/tutorial38.html
+ */
 Animation* Importer::import3DAnimation(aiAnimation* assimpAnimation) {
 	Animation* anim = new Animation(assimpAnimation->mName.C_Str(), assimpAnimation->mDuration, assimpAnimation->mTicksPerSecond);
 	for (int i = 0; i < assimpAnimation->mNumChannels; i++) {

@@ -89,6 +89,7 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		setGame(false);
 	
 	car->Update(timer);
+	car->PlayAnim("");
 
 	if (car != NULL)
 		car->Draw(r);

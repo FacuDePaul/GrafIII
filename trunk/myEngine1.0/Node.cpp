@@ -82,7 +82,7 @@ void Node::UpdateTransformation(D3DXMATRIX parentWorld){
 	D3DXMatrixMultiply(&world, &local, &parentWorld);
 
 	if (bone != NULL) {
-		// TO-DO.
+		bone->setTransformation(world);
 	}
 
 	if (m_vChilds.size() > 0){
@@ -97,8 +97,7 @@ void Node::UpdateTransformation(D3DXMATRIX parentWorld){
 
 void Node::NodeDraw(Renderer& r){
 	if (r.m_frustum->CheckCube(m_bbCenter.x, m_bbCenter.y, m_bbCenter.z, D3DXVec3Length(&(m_bbCenter - m_BoundMax)))){
-		//std::cout << GetName() <<"   " << D3DXVec3Length(&(m_bbCenter - m_BoundMax)) << std::endl;
-		// Chech Center & bounds max
+
 		if (m_vChilds.size() > 0){
 			for (int i = 0; i < m_vChilds.size(); i++){
 				m_vChilds[i]->NodeDraw(r);
@@ -107,15 +106,15 @@ void Node::NodeDraw(Renderer& r){
 
 		if (m_vMeshes.size() > 0){
 			for (int i = 0; i < m_vMeshes.size(); i++){
-				r.SetMatrix(World, &world);
-				m_vMeshes[i]->Draw();
+				if (!m_vMeshes[i]->HasBones()) {
+					r.SetMatrix(World, &world);
+					m_vMeshes[i]->Draw();
+				} else {
+					m_vMeshes[i]->AnimationMeshDraw(&r);
+				}
+				
 			}
 		}
-	}
-	else{
-		//std::cout << D3DXVec3Length(&(m_bbCenter - m_BoundMax)) << std::endl;
-		// Never enters here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		std::cout << GetName() + " is not drawn." << std::endl;
 	}
 }
 

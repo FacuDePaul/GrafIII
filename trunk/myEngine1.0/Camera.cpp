@@ -12,7 +12,7 @@ Camera::Camera(Renderer& _r)
 	m_position = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_velocity = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_look = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
-	CreateProjectionMatrix(D3DX_PI / 3.0f, 1.3f, 0.1f, 1000.0f);
+	CreateProjectionMatrix(D3DX_PI / 3.0f, 1.3f, 1.0f, 1000.0f);
 	Update();
 }
 
