@@ -15,19 +15,21 @@ namespace engine{
 		D3DXMATRIX m_Matrix;
 	};
 
+	// clase publica para guardar la informacion del bone
 	class MYENGINE_API BoneInfo{
-	public:		// Tiene que ser todo publico, ya que es solo una estructura con data!
+	public:
 
 		D3DXMATRIX offsetMatrix;
 		std::map<unsigned int, float> m_mWeight;
 		BoneInfo();
 		Bone* m_pBone;
-		void setOffsetMatrix(float, float, float, float,
+		void setOffsetMatrix(
+			float, float, float, float,
 			float, float, float, float,
 			float, float, float, float,
 			float, float, float, float);
 
-		void addWeight(unsigned int index, float weight)  { m_mWeight[index] = weight; }
-		void setBone(Bone* pBone)						  { m_pBone = pBone; }
+		void AddWeight(unsigned int index, float weight)  { m_mWeight[index] = weight; }
+		void SetBone(Bone* pBone)						  { m_pBone = pBone; }
 	};
 }

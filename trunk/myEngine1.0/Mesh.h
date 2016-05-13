@@ -43,8 +43,8 @@ namespace engine{
 		D3DXVECTOR3* m_pBB;
 
 	private:
-		IndexBuffer* m_pIndexBuffer;
-		VertexBuffer* m_pVertexBuffer;
+//		IndexBuffer* m_pIndexBuffer;
+//		VertexBuffer* m_pVertexBuffer;
 		Primitive m_Primitive;
 		Renderer& m_rRenderer;
 		Texture m_pTexture;

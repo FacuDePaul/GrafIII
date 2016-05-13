@@ -8,27 +8,27 @@
 using namespace engine;
 
 
-Mesh::Mesh(Renderer& r, bool isTextured) : m_rRenderer(r), m_pVertexBuffer(NULL), m_pIndexBuffer(NULL),
+Mesh::Mesh(Renderer& r, bool isTextured) : m_rRenderer(r),
 m_pTexture(NoTexture), m_pBB(new D3DXVECTOR3[8]), m_VtxHuesos(NULL), VectorDraw(NULL){
 	if(!isTextured){
-		m_pVertexBuffer = r.CreateVertexBuffer(sizeof(engine::ColorVertex), engine::ColorVertexType);
-		m_pIndexBuffer = r.CreateIndexBuffer();
+		p_vb = r.CreateVertexBuffer(sizeof(engine::ColorVertex), engine::ColorVertexType);
+		p_ib = r.CreateIndexBuffer();
 	}else{
-		m_pVertexBuffer = r.CreateVertexBuffer(sizeof(engine::MeshVertex), engine::MeshVertexType);
-		m_pIndexBuffer = r.CreateIndexBuffer();
+		p_vb = r.CreateVertexBuffer(sizeof(engine::MeshVertex), engine::MeshVertexType);
+		p_ib = r.CreateIndexBuffer();
 	}
 }
 
 
 Mesh::~Mesh(){
-	if(m_pVertexBuffer){
-		delete m_pVertexBuffer;
-		m_pVertexBuffer = NULL;
+	if (p_vb){
+		delete p_vb;
+		p_vb = NULL;
 	}
 
-	if(m_pIndexBuffer){
-		delete m_pIndexBuffer;
-		m_pIndexBuffer = NULL;
+	if (p_ib){
+		delete p_ib;
+		p_ib = NULL;
 	}
 
 	if (m_VtxHuesos)
@@ -41,8 +41,8 @@ Mesh::~Mesh(){
 
 void Mesh::SetData(ColorVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount){
 	m_Primitive = Prim;
-	m_pVertexBuffer->SetVertexData((void *)Tex_Vertex, vertexCount);
-	m_pIndexBuffer->SetIndexData(pInt, indexCount);
+	p_vb->SetVertexData((void *)Tex_Vertex, vertexCount);
+	p_ib->SetIndexData(pInt, indexCount);
 }
 
 
@@ -53,8 +53,8 @@ void Mesh::SetData(MeshVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, u
 	m_TextureVertex = Tex_Vertex;
 	m_VertexCount = vertexCount;
 
-	m_pVertexBuffer->SetVertexData((void *)Tex_Vertex, vertexCount);
-	m_pIndexBuffer->SetIndexData(pInt, indexCount);
+	p_vb->SetVertexData((void *)Tex_Vertex, vertexCount);
+	p_ib->SetIndexData(pInt, indexCount);
 
 	m_VtxHuesos = new D3DXVECTOR3[m_VertexCount];
 	VectorDraw = new D3DXVECTOR3[m_VertexCount];
@@ -72,8 +72,8 @@ void Mesh::SetTexture(Texture t){
 }
 
 void Mesh::Draw(){
-	m_pVertexBuffer->Bind();
-	m_pIndexBuffer->Bind();
+	p_vb->Bind();
+	p_ib->Bind();
 	
 	m_rRenderer.SetCurrentTexture(m_pTexture);
 	m_rRenderer.Draw(m_Primitive);
@@ -142,8 +142,8 @@ void Mesh::AnimationMeshDraw(Renderer* pRenderer){
 		m_TextureVertex[i].z = VectorDraw[i].z;
 	}
 	pRenderer->SetCurrentTexture(m_pTexture);
-	m_pVertexBuffer->SetVertexData((void *)m_TextureVertex, m_VertexCount);
-	m_pVertexBuffer->Bind();
-	m_pIndexBuffer->Bind();
+	p_vb->SetVertexData((void *)m_TextureVertex, m_VertexCount);
+	p_vb->Bind();
+	p_ib->Bind();
 	pRenderer->Draw(m_Primitive);
 }

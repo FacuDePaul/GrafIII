@@ -109,7 +109,6 @@
     <ClInclude Include="RenderTypes.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="Skeleton.h" />
     <ClInclude Include="timer\Timer.h" />
     <ClInclude Include="TinyXML\tinyxml2.h" />
     <ClInclude Include="VertexBuffer.h" />
@@ -134,7 +133,6 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="RenderTypes.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="timer\Timer.cpp" />
     <ClCompile Include="TinyXML\tinyxml2.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />

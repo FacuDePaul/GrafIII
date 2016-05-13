@@ -178,19 +178,18 @@ void Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial
 			aiBone* bone = pkAiMesh->mBones[i];
 			BoneInfo* bInfo = new BoneInfo();
 			for (int j = 0; j < bone->mNumWeights; j++){
-				bInfo->addWeight(bone->mWeights[j].mVertexId, bone->mWeights[j].mWeight);
+				bInfo->AddWeight(bone->mWeights[j].mVertexId, bone->mWeights[j].mWeight);
 			}
 			aiMatrix4x4 m = bone->mOffsetMatrix.Transpose();
 			bInfo->setOffsetMatrix(m.a1, m.a2, m.a3, m.a4, m.b1, m.b2, m.b3, m.b4,
 				m.c1, m.c2, m.c3, m.c4, m.d1, m.d2, m.d3, m.d4);
-			std::string bName = bone->mName.C_Str();
-			if (!m_pBoneMap.count(bName)){
-				m_pBoneMap[bName] = new Bone();
-				bInfo->setBone(m_pBoneMap[bName]);
+			std::string strName = bone->mName.C_Str();
+			if (!m_pBoneMap.count(strName)){
+				m_pBoneMap[strName] = new Bone();
+				bInfo->SetBone(m_pBoneMap[strName]);
 			}
-			else{
-				bInfo->setBone(m_pBoneMap[bName]);
-			}
+			else
+				bInfo->SetBone(m_pBoneMap[strName]);
 			kMesh.AddBoneInfo(bInfo);
 		}
 	}
