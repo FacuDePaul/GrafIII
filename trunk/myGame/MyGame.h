@@ -21,8 +21,6 @@ namespace MyGame{
 		engine::Camera* mainCamera;
 		engine::Cube* mesh;
 		engine::Mesh* plane;
-
-		engine::Node* pig;
-		engine::Node* car;
+		engine::Node* wolf;
 	};
 }

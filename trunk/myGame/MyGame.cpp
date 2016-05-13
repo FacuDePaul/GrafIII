@@ -28,14 +28,15 @@ bool Game::Init(engine::Renderer& r){
 	*/
 	r.SetBackgroundColor(0, 0, 0);
 
-	car = new engine::Node();
-	if (importer->ImportScene("./Tiny.x", *car)){
-		car->SetPos(0.0f, 0.0f, 100.0f);
-		car->SetScale(1.0f, 1.0f, 1.0f);
+	wolf = new engine::Node();
+	if (importer->ImportScene("./wolf/wolf_obj.obj", *wolf)){
+//		wolf->SetAnimation("Cycle Walk");
+		wolf->SetPos(0.0f, 0.0f, 100.0f);
+		wolf->SetScale(1.0f, 1.0f, 1.0f);
 	}
 	else{
-		delete car;
-		car = NULL;
+		delete wolf;
+		wolf = NULL;
 	}
 
 	return true;
@@ -88,11 +89,14 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 	if (dInput.keyDown(engine::Input::KEY_ESCAPE))
 		setGame(false);
 	
-	car->Update(timer);
-	car->PlayAnim("");
+	
 
-	if (car != NULL)
-		car->Draw(r);
+	if (wolf != NULL)
+	{
+		wolf->Update(timer);
+		wolf->Draw(r);
+	}
+		
 }
 
 
@@ -102,13 +106,8 @@ void Game::DeInit(){
 		mesh = NULL;
 	}
 
-	if (pig){
-		delete pig;
-		pig = NULL;
-	}
-
-	if (car){
-		delete car;
-		car = NULL;
+	if (wolf){
+		delete wolf;
+		wolf = NULL;
 	}
 }
