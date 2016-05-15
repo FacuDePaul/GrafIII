@@ -29,10 +29,10 @@ bool Game::Init(engine::Renderer& r){
 	r.SetBackgroundColor(0, 0, 0);
 
 	wolf = new engine::Node();
-	if (importer->ImportScene("./wolf/Wolf_fbx.fbx", *wolf)){
+	if (importer->ImportScene("./ArmyPilot/ArmyPilot.obj", *wolf)){
 		wolf->SetAnimation("Cycle Walk");
 		wolf->SetPos(0.0f, 0.0f, 100.0f);
-		wolf->SetScale(1.0f, 1.0f, 1.0f);
+		wolf->SetScale(100.0f, 100.0f, 100.0f);
 	}
 	else{
 		delete wolf;
