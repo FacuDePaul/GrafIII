@@ -107,7 +107,7 @@ void Camera::Update()
 	// Cap velocity to max velocity
 	if (D3DXVec3Length(&m_velocity) > m_maxVelocity)
 	{
-		m_velocity = *(D3DXVec3Normalize(&m_velocity, &m_velocity)) * m_maxVelocity;
+		//m_velocity = *(D3DXVec3Normalize(&m_velocity, &m_velocity)) * m_maxVelocity;
 	}
 
 	// Move the camera
@@ -140,7 +140,7 @@ void Camera::Update()
 	m_pitch = atan2f(m_look.y, lookLengthOnXZ);
 	m_yaw = atan2f(m_look.x, m_look.z);
 
-	r->m_frustum->ConstructFrustum(m_farPlane, m_view, m_projection);
+	r->m_frustum->ConstructFrustum();
 }
 
 void Camera::SetPosition(D3DXVECTOR3* pPosition)

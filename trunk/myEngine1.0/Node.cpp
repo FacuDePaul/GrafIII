@@ -9,7 +9,7 @@
 using namespace engine;
 
 
-Node::Node() : bone(NULL), currentAnimation(NULL), animationFrame(-1)
+Node::Node() : bone(NULL), currentAnimation(NULL), animationFrame(-1), m_vBB(new D3DXVECTOR3[8])
 {
 	D3DXMatrixIdentity(&world);
 	D3DXMatrixIdentity(&defaultMatrix);
@@ -17,6 +17,11 @@ Node::Node() : bone(NULL), currentAnimation(NULL), animationFrame(-1)
 }
 
 Node::~Node(){
+	if (m_vBB) {
+		delete m_vBB;
+		m_vBB = NULL;
+	}
+
 	for (int i = 0; i < m_vChilds.size(); i++) {
 		delete m_vChilds[i];
 		m_vChilds[i] = NULL;
@@ -93,10 +98,12 @@ void Node::UpdateTransformation(D3DXMATRIX parentWorld){
 
 	SetBB();
 }
-
+//
 
 void Node::NodeDraw(Renderer& r){
-	if (r.m_frustum->CheckCube(m_bbCenter.x, m_bbCenter.y, m_bbCenter.z, D3DXVec3Length(&(m_bbCenter - m_BoundMax)))){
+	if (r.m_frustum->CheckCube(m_vBB)){
+
+		std::cout << "dibuja \r";
 
 		if (m_vChilds.size() > 0){
 			for (int i = 0; i < m_vChilds.size(); i++){
@@ -109,12 +116,17 @@ void Node::NodeDraw(Renderer& r){
 				if (!m_vMeshes[i]->HasBones()) {
 					r.SetMatrix(World, &world);
 					m_vMeshes[i]->Draw();
-				} else {
+				}
+				else {
 					m_vMeshes[i]->AnimationMeshDraw(&r);
 				}
-				
+
 			}
 		}
+	}
+	else
+	{
+		std::cout << "no dibuja \r";
 	}
 }
 
@@ -158,34 +170,47 @@ int Node::GetChildsCount(){
 	return m_vChilds.size();
 }
 
-
+//
 void Node::SetBB(){
 	if (!m_vMeshes.empty()){
 		D3DXVECTOR3 v_vertices[8];
-		GetBBCenter(m_vMeshes[0]->m_pBB);
-		for (int i = 0; i < 8; i++)
-			D3DXVec3TransformCoord(&v_vertices[0], &m_vMeshes[0]->m_pBB[i], &world);
+
+		m_vMeshes[0]->GetBox(&world, v_vertices);
 
 		m_BoundMax = v_vertices[0];
+		m_BoundMin = v_vertices[0];
 
 		for (int i = 1; i < 8; i++){
 			// X
 			if (v_vertices[i].x > m_BoundMax.x)
 				m_BoundMax.x = v_vertices[i].x;
+			else if (v_vertices[i].x < m_BoundMin.x)
+				m_BoundMin.x = v_vertices[i].x;
 
 			// Y
 			if (v_vertices[i].y > m_BoundMax.y)
 				m_BoundMax.y = v_vertices[i].y;
+			else if (v_vertices[i].y < m_BoundMin.y)
+				m_BoundMin.y = v_vertices[i].y;
 
 			// Z
 			if (v_vertices[i].z > m_BoundMax.z)
 				m_BoundMax.z = v_vertices[i].z;
+			else if (v_vertices[i].z < m_BoundMin.z)
+				m_BoundMin.z = v_vertices[i].z;
 		}
 	}
-	else if (!m_vChilds.empty()){
 
-		for (int i = 0; i < m_vChilds.size(); i++){
-			D3DXVECTOR3 vChildMax = m_vChilds[i]->m_BoundMax;
+	/// aca 
+	else if (!m_vChilds.empty()){
+		m_vChilds[0]->GetLimits(&m_BoundMin, &m_BoundMax);
+	}
+
+	for (int i = 0; i < m_vChilds.size(); i++){
+			D3DXVECTOR3 vChildMax = m_BoundMax;
+			D3DXVECTOR3 vChildMin = m_BoundMin;
+
+			m_vChilds[0]->GetLimits(&vChildMin, &vChildMax);
 
 			if (vChildMax.x > m_BoundMax.x)
 				m_BoundMax.x = vChildMax.x;
@@ -195,18 +220,30 @@ void Node::SetBB(){
 
 			if (vChildMax.z > m_BoundMax.z)
 				m_BoundMax.z = vChildMax.z;
-		}
+
+			if (vChildMin.x < m_BoundMin.x)
+				m_BoundMin.x = vChildMin.x;
+
+			if (vChildMin.y < m_BoundMin.y)
+				m_BoundMin.y = vChildMin.y;
+
+			if (vChildMin.z < m_BoundMin.z)
+				m_BoundMin.z = vChildMin.z;
 	}
+
+	m_vBB[0] = m_BoundMax;
+	m_vBB[1] = D3DXVECTOR3(m_BoundMax.x, m_BoundMin.y, m_BoundMax.z);
+	m_vBB[2] = D3DXVECTOR3(m_BoundMin.x, m_BoundMin.y, m_BoundMax.z);
+	m_vBB[3] = D3DXVECTOR3(m_BoundMin.x, m_BoundMax.y, m_BoundMax.z);
+	m_vBB[4] = D3DXVECTOR3(m_BoundMax.x, m_BoundMax.y, m_BoundMin.z);
+	m_vBB[5] = D3DXVECTOR3(m_BoundMax.x, m_BoundMin.y, m_BoundMin.z);
+	m_vBB[6] = m_BoundMin;
+	m_vBB[7] = D3DXVECTOR3(m_BoundMin.x, m_BoundMax.y, m_BoundMin.z);
 }
 
-
-
-void Node::GetBBCenter(D3DXVECTOR3* vertices){
-	for (int i = 0; i < 8; i++){
-		m_bbCenter += vertices[i];
-	}
-
-	m_bbCenter /= 8;
+void Node::GetLimits(D3DXVECTOR3* pMin, D3DXVECTOR3* pMax){
+	*pMax = m_BoundMax;
+	*pMin = m_BoundMin;
 }
 
 void Node::Update(Timer& t) {

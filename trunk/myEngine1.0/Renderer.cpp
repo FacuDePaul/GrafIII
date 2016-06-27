@@ -84,12 +84,12 @@ bool Renderer::Init(HWND _HwnD){
 
 		float fViewPortWidth = static_cast<float>(kViewport.Width);
 		float fViewPortHeight = static_cast<float>(kViewport.Height);
-		/*
-		D3DXMATRIX projectionMatrix;  //MATRIX PROYEC...
+
+		D3DXMATRIX projectionMatrix;
 		D3DXMatrixPerspectiveFovLH(&projectionMatrix, D3DXToRadian(90), fViewPortWidth / fViewPortHeight, 1.0f, 3000.0f);
 		//D3DXMatrixOrthoLH(&projectionMatrix,fViewPortWidth,fViewPortHeight, -1.0f, 1.0f);
 		d3d_dev->SetTransform(D3DTS_PROJECTION, &projectionMatrix);
-		*/
+
 		/*
 		// view
 		D3DXMATRIX viewMatrix;

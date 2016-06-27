@@ -33,6 +33,7 @@ namespace engine{
 		
 		void Draw();
 		void DrawBB() const;
+		void Mesh::GetBox(D3DXMATRIX *, D3DXVECTOR3*);
 
 		///
 		void AnimationMeshDraw(Renderer* pRenderer);

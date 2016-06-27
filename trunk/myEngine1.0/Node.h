@@ -23,8 +23,9 @@ namespace engine{
 		
 		std::vector<Mesh*> m_vMeshes;
 
+		D3DXVECTOR3* m_vBB;
 		void SetBB();
-		void GetBBCenter(D3DXVECTOR3* vertices);
+		void GetLimits(D3DXVECTOR3*, D3DXVECTOR3*);
 		void UpdateTransformation(D3DXMATRIX transformation);
 
 	public:
@@ -40,7 +41,6 @@ namespace engine{
 
 		D3DXVECTOR3 m_BoundMin;
 		D3DXVECTOR3 m_BoundMax;
-		D3DXVECTOR3 m_bbCenter;
 
 		std::vector<Node*> m_vChilds;
 

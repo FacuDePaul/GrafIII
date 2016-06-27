@@ -10,10 +10,9 @@ namespace engine{
 		Frustum(Renderer*);
 		~Frustum();
 
-		void ConstructFrustum(float, D3DXMATRIX, D3DXMATRIX);
+		void ConstructFrustum();
 
-		bool CheckCube(float, float, float, float);
-		bool CheckSphere(float, float, float, float);
+		bool CheckCube(D3DXVECTOR3*);
 
 	private:
 		Renderer* _r;

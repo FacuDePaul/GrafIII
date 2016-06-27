@@ -5,10 +5,6 @@
 #include "Renderer.h"
 #include "Node.h"
 #include "Bone.h"
-
-
-
-
 #include "animation.h"
 #include <iostream>
 
@@ -43,7 +39,7 @@ bool Importer::ImportScene(const std::string& fileName, Node& SceneRoot){
 												aiPrimitiveType_LINE | aiPrimitiveType_POINT |
 												aiProcess_Triangulate | aiProcess_SortByPType | aiProcess_ConvertToLeftHanded);
 
-	if (AiScene){
+	if (AiScene != NULL){
 		SceneRoot.SetName(AiScene->mRootNode->mName.C_Str());
 		for (int i = 0; i < AiScene->mNumAnimations; i++) {
 			SceneRoot.AddAnimation(import3DAnimation(AiScene->mAnimations[i]));
@@ -52,7 +48,6 @@ bool Importer::ImportScene(const std::string& fileName, Node& SceneRoot){
 		ImportNode(SceneRoot, AiScene->mRootNode, AiScene);
 		// Linkear huesos al nodo que le corresponda.
 		addBonesToNode(&SceneRoot);
-
 
 		return true;
 	}
@@ -96,33 +91,6 @@ void Importer::ImportNode(Node& rNode, aiNode* aiNode, const aiScene* aiScene){
 		rNode.AddMesh(pkMesh);
 
 		aiMesh* pkAiMesh = aiScene->mMeshes[aiNode->mMeshes[i]];
-		
-		/*
-		pkMesh->m_bHasBones = pkAiMesh->HasBones();
-		pkMesh->m_iNnumBones = pkAiMesh->mNumBones;
-
-		if(pkAiMesh->HasBones()){
-		for(int i=0; i < pkAiMesh->mNumBones; i++){
-			aiBone* bone = pkAiMesh->mBones[i];
-			BoneInfo* bInfo = new BoneInfo();
-			for(int j=0; j <  bone->mNumWeights; j++){
-				bInfo->addWeight(bone->mWeights[j].mVertexId, bone->mWeights[j].mWeight);
-			}
-			aiMatrix4x4 m = bone->mOffsetMatrix.Transpose();
-			bInfo->setOffsetMatrix(m.a1, m.a2, m.a3, m.a4, m.b1, m.b2, m.b3, m.b4,
-				m.c1, m.c2, m.c3, m.c4, m.d1, m.d2, m.d3, m.d4);
-			std::string bName = bone->mName.C_Str();
-			if(!m_pBoneMap.count(bName)){
-				m_pBoneMap[bName] = new Bone();
-				bInfo->setBone(m_pBoneMap[bName]);
-			}
-			else
-				bInfo->setBone(m_pBoneMap[bName]);
-			pkMesh->AddBoneInfo(bInfo);
-		}
-		*/
-
-
 		aiMaterial* pkAiMaterial = aiScene->mMaterials[pkAiMesh->mMaterialIndex];
 
 		ImportMesh(pkAiMesh, pkAiMaterial, *pkMesh);

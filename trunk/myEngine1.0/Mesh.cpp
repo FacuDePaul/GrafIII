@@ -80,6 +80,12 @@ void Mesh::Draw(){
 }
 
 
+//
+void Mesh::GetBox(D3DXMATRIX * pMatrizMundo, D3DXVECTOR3* pOut){
+	for (int i = 0; i < 8; i++){
+		D3DXVec3TransformCoord(&pOut[i], &m_pBB[i], pMatrizMundo);
+	}
+}
 
 void Mesh::DrawBB() const{
 	D3DXVECTOR3 v_BoundMin;
@@ -118,7 +124,7 @@ void Mesh::DrawBB() const{
 	m_pBB[6] = v_BoundMin;
 	m_pBB[7] = D3DXVECTOR3(v_BoundMin.x, v_BoundMax.y, v_BoundMin.z);
 }
-
+//
 void Mesh::AnimationMeshDraw(Renderer* pRenderer){
 	ZeroMemory((void*)VectorDraw, sizeof(D3DXVECTOR3) * m_VertexCount);
 	for (int i = 0; i < m_vBoneData.size(); i++){
