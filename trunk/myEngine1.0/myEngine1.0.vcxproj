@@ -106,6 +106,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="myEngine_API.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NodeBSP.h" />
     <ClInclude Include="RenderTypes.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NodeBSP.cpp" />
     <ClCompile Include="RenderTypes.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="timer\Timer.cpp" />
