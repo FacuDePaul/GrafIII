@@ -14,6 +14,11 @@ Node::Node() : bone(NULL), currentAnimation(NULL), animationFrame(-1), m_vBB(new
 	D3DXMatrixIdentity(&world);
 	D3DXMatrixIdentity(&defaultMatrix);
 	D3DXMatrixIdentity(&local);
+	isPlane = false;
+}
+
+D3DXPLANE Node::GetPlane() {
+	return m_vMeshes[0]->GetPlane(&world);
 }
 
 Node::~Node(){
@@ -54,6 +59,12 @@ void Node::Draw(Renderer& r){
 	NodeDraw(r);
 }
 
+void Node::DrawMeshes(Renderer& r) {
+	for (int i = 0; i < m_vMeshes.size(); i++) {
+		r.SetMatrix(World, &world);
+		m_vMeshes[i]->Draw();
+	}
+}
 
 void Node::UpdateTransformation(D3DXMATRIX parentWorld){
 	D3DXMATRIX translation;

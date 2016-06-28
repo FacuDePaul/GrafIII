@@ -38,6 +38,16 @@ Mesh::~Mesh(){
 }
 
 
+D3DXPLANE Mesh::GetPlane(D3DXMATRIX* transform) {
+	D3DXVECTOR3 planepoints[3];
+	for (int i = 0; i < 3; i++) {
+		D3DXVECTOR3 pos(m_TextureVertex[i].x, m_TextureVertex[i].y, m_TextureVertex[i].z);
+		D3DXVec3TransformCoord(&planepoints[i], &pos, transform);
+	}
+	D3DXPLANE plane;
+	D3DXPlaneFromPoints(&plane, &planepoints[0], &planepoints[1], &planepoints[2]);
+	return plane;
+}
 
 void Mesh::SetData(ColorVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount){
 	m_Primitive = Prim;

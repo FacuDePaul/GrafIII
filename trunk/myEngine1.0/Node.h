@@ -28,6 +28,8 @@ namespace engine{
 		void GetLimits(D3DXVECTOR3*, D3DXVECTOR3*);
 		void UpdateTransformation(D3DXMATRIX transformation);
 
+		friend class NodeBSP;
+		friend class Game;
 	public:
 		Node();
 		~Node();
@@ -51,7 +53,9 @@ namespace engine{
 		Node* GetChild(std::string name);
 		int GetChildsCount();
 
-		//Skeletal Animation
+		bool isPlane;
+		D3DXPLANE GetPlane();
+
 	private:
 		std::map<std::string, Animation*> animations;
 		int animationFrame;
@@ -69,6 +73,9 @@ namespace engine{
 		Animation* GetAnim(std::string);
 		void Update(Timer&) override;
 		bool isPlaying();
+
+
+		void DrawMeshes(Renderer&);
 	};
 
 }

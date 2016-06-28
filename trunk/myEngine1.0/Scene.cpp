@@ -2,6 +2,8 @@
 #include "Renderer.h"
 #include "Mesh.h"
 #include "Node.h"
+#include "NodeBSP.h"
+#include "Camera.h"
 #include <algorithm>
 using namespace engine;
 

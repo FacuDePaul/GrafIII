@@ -9,6 +9,8 @@ using namespace MyGame;
 float mSpeed = 0.1f;
 
 
+engine::Node* bsp;
+
 bool Game::Init(engine::Renderer& r){
 	mainCamera = r.c;
 	mainCamera->SetPosition(0, 0, -200);
@@ -39,13 +41,19 @@ bool Game::Init(engine::Renderer& r){
 		wolf = NULL;
 	}
 
+	bsp = new engine::Node();
+	importer->ImportScene("bspscene.3ds", *bsp);
+
+	RegisterInBSPtree(bsp, true);
+	ArrangeBSPTree();
+
 	return true;
 }
 
 
 void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer& timer){
 
-	// Camera Update 
+	engine::Game::Frame(r, dInput, timer);
 
 	if(dInput.keyDown(engine::Input::KEY_UP) || dInput.keyDown(engine::Input::KEY_W)){
 		mainCamera->MoveForward(mSpeed * timer.timeBetweenFrames());

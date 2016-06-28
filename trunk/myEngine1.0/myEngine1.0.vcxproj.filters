@@ -97,7 +97,7 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="NodeBSP.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

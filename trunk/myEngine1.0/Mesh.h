@@ -43,6 +43,9 @@ namespace engine{
 
 		D3DXVECTOR3* m_pBB;
 
+
+		D3DXPLANE GetPlane(D3DXMATRIX*);
+
 	private:
 //		IndexBuffer* m_pIndexBuffer;
 //		VertexBuffer* m_pVertexBuffer;

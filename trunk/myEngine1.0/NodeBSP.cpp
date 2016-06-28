@@ -2,6 +2,8 @@
 #include "Renderer.h"
 #include "Node.h"
 
+using namespace engine;
+
 void NodeBSP::AddNode(NodeBSP* pNode) {
 	if (pNode == NULL) return;
 
@@ -67,7 +69,7 @@ void NodeBSP::Draw(Renderer* pRenderer, D3DXVECTOR3 vCameraPos) {
 	if (pos == BACK) {
 		if (m_pBackNode == NULL) {
 			for (int i = 0; i < m_vBackObjects.size(); i++) {
-				m_vBackObjects[i]->DrawMeshes(pRenderer);
+				m_vBackObjects[i]->DrawMeshes(*pRenderer);
 			}
 		}
 		else {
@@ -77,7 +79,7 @@ void NodeBSP::Draw(Renderer* pRenderer, D3DXVECTOR3 vCameraPos) {
 	else if (pos == FRONT) {
 		if (m_pFrontNode == NULL) {
 			for (int i = 0; i < m_vFrontObjects.size(); i++) {
-				m_vFrontObjects[i]->DrawMeshes(pRenderer);
+				m_vFrontObjects[i]->DrawMeshes(*pRenderer);
 			}
 		}
 		else {

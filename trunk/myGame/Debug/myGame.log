@@ -1,17 +1,17 @@
 ﻿  MyGame.cpp
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(26): warning C4251: 'engine::Game::m_mapa': class 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(29): warning C4251: 'engine::Game::m_mapa': class 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
           with
           [
               _Kty=std::string,
               _Ty=engine::Scene *
           ]
-  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(26): note: see declaration of 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(29): note: see declaration of 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
           with
           [
               _Kty=std::string,
               _Ty=engine::Scene *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(27): warning C4251: 'engine::Game::m_mIterator': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(30): warning C4251: 'engine::Game::m_mIterator': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
           with
           [
               _Kty=std::string,
@@ -22,6 +22,36 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(
           [
               _Kty=std::string,
               _Ty=engine::Scene *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(41): warning C4251: 'engine::Game::NodesToBSP': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(41): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(42): warning C4251: 'engine::Game::ParentNodes': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(41): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(43): warning C4251: 'engine::Game::BSPNodes': class 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::NodeBSP *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(43): note: see declaration of 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::NodeBSP *
           ]
 c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(46): warning C4251: 'engine::Entity::m_sColGroup': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
   c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
@@ -107,12 +137,12 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(
               _Kty=unsigned int,
               _Ty=float
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(61): warning C4251: 'engine::Mesh::m_vBoneData': class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(64): warning C4251: 'engine::Mesh::m_vBoneData': class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
           with
           [
               _Ty=engine::BoneInfo *
           ]
-  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(61): note: see declaration of 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>'
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(64): note: see declaration of 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>'
           with
           [
               _Ty=engine::BoneInfo *
@@ -132,33 +162,33 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(
           [
               _Ty=engine::Mesh *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(38): warning C4251: 'engine::Node::local': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(40): warning C4251: 'engine::Node::local': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(39): warning C4251: 'engine::Node::world': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(41): warning C4251: 'engine::Node::world': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(40): warning C4251: 'engine::Node::defaultMatrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(42): warning C4251: 'engine::Node::defaultMatrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(42): warning C4251: 'engine::Node::m_BoundMin': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(44): warning C4251: 'engine::Node::m_BoundMin': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(43): warning C4251: 'engine::Node::m_BoundMax': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(45): warning C4251: 'engine::Node::m_BoundMax': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(45): warning C4251: 'engine::Node::m_vChilds': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(47): warning C4251: 'engine::Node::m_vChilds': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
           with
           [
               _Ty=engine::Node *
           ]
-  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(45): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(41): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
           with
           [
               _Ty=engine::Node *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(56): warning C4251: 'engine::Node::animations': class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(60): warning C4251: 'engine::Node::animations': class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
           with
           [
               _Kty=std::string,
               _Ty=engine::Animation *
           ]
-  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(56): note: see declaration of 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(60): note: see declaration of 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
           with
           [
               _Kty=std::string,
@@ -212,21 +242,21 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\animati
           [
               _Ty=engine::Animation::Frame *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(34): warning C4251: 'engine::Scene::m_sName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(36): warning C4251: 'engine::Scene::m_sName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
   c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(35): warning C4251: 'engine::Scene::m_mapMesh': class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(37): warning C4251: 'engine::Scene::m_mapMesh': class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
           with
           [
               _Kty=std::string,
               _Ty=engine::Mesh *
           ]
-  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(35): note: see declaration of 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(37): note: see declaration of 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
           with
           [
               _Kty=std::string,
               _Ty=engine::Mesh *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(36): warning C4251: 'engine::Scene::m_mIteratorMesh': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(38): warning C4251: 'engine::Scene::m_mIteratorMesh': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
           with
           [
               _Kty=std::string,
@@ -238,31 +268,19 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h
               _Kty=std::string,
               _Ty=engine::Mesh *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(41): warning C4251: 'engine::Scene::m_pClsGroups': class 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(43): warning C4251: 'engine::Scene::m_pClsGroups': class 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
           with
           [
               _Kty=std::string,
               _Ty=engine::Scene::Mesh3DVector *
           ]
-  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(39): note: see declaration of 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(41): note: see declaration of 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
           with
           [
               _Kty=std::string,
               _Ty=engine::Scene::Mesh3DVector *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(42): warning C4251: 'engine::Scene::m_pClsGroupsIter': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
-          with
-          [
-              _Kty=std::string,
-              _Ty=engine::Scene::Mesh3DVector *
-          ]
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
-          with
-          [
-              _Kty=std::string,
-              _Ty=engine::Scene::Mesh3DVector *
-          ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(45): warning C4251: 'engine::Scene::m_pClsGroupsIterA': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(44): warning C4251: 'engine::Scene::m_pClsGroupsIter': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
           with
           [
               _Kty=std::string,
@@ -274,7 +292,19 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h
               _Kty=std::string,
               _Ty=engine::Scene::Mesh3DVector *
           ]
-c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(46): warning C4251: 'engine::Scene::m_pClsGroupsIterB': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(47): warning C4251: 'engine::Scene::m_pClsGroupsIterA': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(48): warning C4251: 'engine::Scene::m_pClsGroupsIterB': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
           with
           [
               _Kty=std::string,
