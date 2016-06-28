@@ -12,6 +12,9 @@ namespace engine{
 
 		void ConstructFrustum();
 
+
+		void Calculate(D3DXMATRIX*, D3DXMATRIX*);
+
 		bool CheckCube(D3DXVECTOR3*);
 
 	private:

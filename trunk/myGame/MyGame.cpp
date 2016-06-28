@@ -11,7 +11,7 @@ float mSpeed = 0.1f;
 
 bool Game::Init(engine::Renderer& r){
 	mainCamera = r.c;
-	mainCamera->SetPosition(&D3DXVECTOR3(0, 0, -200));
+	mainCamera->SetPosition(0, 0, -200);
 	CreateScene("Scene1");
 	engine::Scene* scene1 = GetScene("Scene1");
 
@@ -56,16 +56,16 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 	}
 
 	if(dInput.keyDown(engine::Input::KEY_LEFT) || dInput.keyDown(engine::Input::KEY_A)){
-		mainCamera->Strafe(-mSpeed * timer.timeBetweenFrames());
+		mainCamera->MoveRight(-mSpeed * timer.timeBetweenFrames());
 	}
 
 	if(dInput.keyDown(engine::Input::KEY_RIGHT) || dInput.keyDown(engine::Input::KEY_D)){
-		mainCamera->Strafe(mSpeed * timer.timeBetweenFrames());
+		mainCamera->MoveRight(mSpeed * timer.timeBetweenFrames());
 	}
 
 	if (dInput.mouseDown(engine::Input::MB_1)){
-		mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 200 * timer.timeBetweenFrames());
-		mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 200 * timer.timeBetweenFrames());
+		//mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 200 * timer.timeBetweenFrames());
+		//mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 200 * timer.timeBetweenFrames());
 	}
 
 	

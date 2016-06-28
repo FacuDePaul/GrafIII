@@ -41,8 +41,15 @@ void Node::ReceiveAssimpData(D3DXMATRIX* mx){
 
 
 void Node::Draw(Renderer& r){
+
+	D3DXMATRIX matrix;
+
+	D3DXMatrixIdentity(&matrix);
 	D3DXMatrixIdentity(&world);
-	r.SetMatrix(World, &world);
+
+	//r.SetMatrix(World, &matrix);
+	r.CalculateFrustrum();
+
 	UpdateTransformation(world);
 	NodeDraw(r);
 }
@@ -102,9 +109,7 @@ void Node::UpdateTransformation(D3DXMATRIX parentWorld){
 
 void Node::NodeDraw(Renderer& r){
 	if (r.m_frustum->CheckCube(m_vBB)){
-
 		std::cout << "dibuja \r";
-
 		if (m_vChilds.size() > 0){
 			for (int i = 0; i < m_vChilds.size(); i++){
 				m_vChilds[i]->NodeDraw(r);
@@ -123,9 +128,7 @@ void Node::NodeDraw(Renderer& r){
 
 			}
 		}
-	}
-	else
-	{
+	} else {
 		std::cout << "no dibuja \r";
 	}
 }

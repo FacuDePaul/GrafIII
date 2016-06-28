@@ -62,6 +62,52 @@ void Frustum::ConstructFrustum(){
 	}
 }
 
+void Frustum::Calculate(D3DXMATRIX * pMatrizVista, D3DXMATRIX * pMatrizProy) {
+
+	D3DXMATRIX mat;
+	// Combino las matrices
+	D3DXMatrixMultiply(&mat, pMatrizVista, pMatrizProy);
+	// Extraigo plano left
+	m_planes[0].b = mat._24 + mat._21;
+	m_planes[0].a = mat._14 + mat._11;
+	m_planes[0].c = mat._34 + mat._31;
+	m_planes[0].d = mat._44 + mat._41;
+
+	// Extraigo plano right
+	m_planes[1].a = mat._14 - mat._11;
+	m_planes[1].b = mat._24 - mat._21;
+	m_planes[1].c = mat._34 - mat._31;
+	m_planes[1].d = mat._44 - mat._41;
+
+	// Extraigo plano bottom
+	m_planes[2].a = mat._14 + mat._12;
+	m_planes[2].b = mat._24 + mat._22;
+	m_planes[2].c = mat._34 + mat._32;
+	m_planes[2].d = mat._44 + mat._42;
+
+	// Extraigo plano top
+	m_planes[3].a = mat._14 - mat._12;
+	m_planes[3].b = mat._24 - mat._22;
+	m_planes[3].c = mat._34 - mat._32;
+	m_planes[3].d = mat._44 - mat._42;
+
+	// Extraigo plano near
+	m_planes[4].a = mat._13;
+	m_planes[4].b = mat._23;
+	m_planes[4].c = mat._33;
+	m_planes[4].d = mat._43;
+
+	// Extraigo plano far
+	m_planes[5].a = mat._14 - mat._13;
+	m_planes[5].b = mat._24 - mat._23;
+	m_planes[5].c = mat._34 - mat._33;
+	m_planes[5].d = mat._44 - mat._43;
+
+	// normalize planes
+	for (unsigned int i = 0; i<6; i++) {
+		D3DXPlaneNormalize(&m_planes[i], &m_planes[i]);
+	}
+}
 
 
 bool Frustum::CheckCube(D3DXVECTOR3* pVertex){

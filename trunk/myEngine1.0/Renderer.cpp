@@ -86,7 +86,7 @@ bool Renderer::Init(HWND _HwnD){
 		float fViewPortHeight = static_cast<float>(kViewport.Height);
 
 		D3DXMATRIX projectionMatrix;
-		D3DXMatrixPerspectiveFovLH(&projectionMatrix, D3DXToRadian(90), fViewPortWidth / fViewPortHeight, 1.0f, 3000.0f);
+		D3DXMatrixPerspectiveFovLH(&projectionMatrix, D3DXToRadian(90), fViewPortWidth / fViewPortHeight, 1.0f, 1000.0f);
 		//D3DXMatrixOrthoLH(&projectionMatrix,fViewPortWidth,fViewPortHeight, -1.0f, 1.0f);
 		d3d_dev->SetTransform(D3DTS_PROJECTION, &projectionMatrix);
 
@@ -105,8 +105,9 @@ bool Renderer::Init(HWND _HwnD){
 		d3d_dev->SetTransform(D3DTS_WORLD, &worldMatrix);
 
 		// Creo mi camara...
-		c = new Camera(*this);
-		
+		c = new Camera();
+		c->Init(this);
+
 		return true;
 	}
 	return false;
@@ -163,8 +164,13 @@ void Renderer::SetMatrix(MatrixType matrixType, const Matrix& matrix){
 	d3d_dev->SetTransform(MatrixTypeMapping[matrixType], matrix);
 }
 
-/*
-void Renderer::LoadIdentity(){
+void Renderer::setTransformMatrix(D3DXMATRIX* kMatrix) {
+	// set the matrix
+	d3d_dev->MultiplyTransform(D3DTS_VIEW, kMatrix);
+}
+
+
+void Renderer::loadIdentity() {
 	D3DXMATRIX kTempMatrix;
 
 	// set identity matrix
@@ -178,12 +184,11 @@ void Renderer::LoadIdentity(){
 	D3DXVECTOR3 kUpVector(0, 1, 0);
 
 	// generate the view matrix
-	//D3DXMatrixLookAtLH(&kTempMatrix, &kEyePos, &kLookPos, &kUpVector);
+	D3DXMatrixLookAtLH(&kTempMatrix, &kEyePos, &kLookPos, &kUpVector);
 
 	// set the matrix
 	d3d_dev->SetTransform(D3DTS_VIEW, &kTempMatrix);
 }
-*/
 
 void Renderer::SetTransformMatrix(D3DXMATRIX* kMatrix){
 	// set the matrix
@@ -272,4 +277,14 @@ void Renderer::SetCurrentIndexBuffer(IndexBuffer* c_ib){
 
 void Renderer::SetCurrentTexture(const Texture& texture){
 	d3d_dev->SetTexture(0, texture);
+}
+
+void Renderer::CalculateFrustrum() {
+	D3DXMATRIX MatrizProy;
+	D3DXMATRIX MatrizVista;
+
+	d3d_dev->GetTransform(D3DTS_VIEW, &MatrizVista);
+	d3d_dev->GetTransform(D3DTS_PROJECTION, &MatrizProy);
+
+	this->m_frustum->Calculate(&MatrizVista, &MatrizProy);
 }

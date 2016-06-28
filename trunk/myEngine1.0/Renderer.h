@@ -45,9 +45,10 @@ class MYENGINE_API Renderer{
 		IndexBuffer* CreateIndexBuffer();
 		void SetCurrentIndexBuffer(IndexBuffer* c_ib);
 
+		void CalculateFrustrum();
 
-	//	void SetCurrentTexture(const &texture t);
-	//	IDirect3DTexture9 * LoadTexture(std::string& s);
+		void loadIdentity();
+		void setTransformMatrix(D3DXMATRIX * matrix);
 	private:
 		
 		short r, g, b;
