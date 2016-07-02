@@ -87,16 +87,16 @@
     <ClInclude Include="Node.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Frustum.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
-    <ClInclude Include="Bone.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="NodeBSP.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Bone.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -165,10 +165,10 @@
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
     <ClCompile Include="Bone.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
     <ClCompile Include="NodeBSP.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

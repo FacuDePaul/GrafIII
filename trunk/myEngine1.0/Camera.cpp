@@ -58,13 +58,13 @@ void Camera::MoveInDirection(float Dist, float fDirectionX, float fDirectionY, f
 	m_bChanged = true;
 }
 //----------------------------------------------------------------
-void Camera::RotateDown(float Angle)
+void Camera::Pitch(float Angle)
 {
 	m_RotateAroundRight = Angle;
 	m_bChanged = true;
 }
 //----------------------------------------------------------------
-void Camera::RotateRight(float Angle)
+void Camera::Yaw(float Angle)
 {
 	m_RotateAroundUp = Angle;
 	m_bChanged = true;

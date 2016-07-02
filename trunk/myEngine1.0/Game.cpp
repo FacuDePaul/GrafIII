@@ -68,70 +68,59 @@ void Game::OnSceneShutdown(){
 
 void Game::Frame(engine::Renderer& r, engine::DirectInput&, engine::Timer&) {
 	if (BSP != NULL) {
-
-		for (int i = 0; i < ParentNodes.size(); i++) {
-			ParentNodes[i]->Draw(r);
-		}
-
-		BSP->Draw(&r, r.c->m_Position);
+		for (int i = 0; i < m_vParentNodes.size(); i++)
+			m_vParentNodes[i]->Draw(r);
+		BSP->Draw(r, r.c->m_Position);
 	}
 }
 
 void Game::AddScene(Scene* newScene){
 
-	if (newScene == NULL)
-		return;
-
-	if (newScene->GetName() == ""){
+	if (newScene == NULL)	return;
+	if (newScene->GetName() == "")
 		newScene->SetName("NewScene-" + (m_mapa.size() + 1));
-	}
-
 	m_mapa[newScene->GetName()] = newScene;
 }
 
-void Game::AddNodeToBSP(Node* node) {
-	if (node->isPlane)
-		AddBSPPlane(node);
+//BSP
 
-	NodesToBSP.push_back(node);
-	for (int i = 0; i < node->m_vChilds.size(); i++) {
-		AddNodeToBSP(node->m_vChilds[i]);
-	}
-}
-
-//----------------------------------------------------
-void Game::AddBSPPlane(Node* pNode) {
-	D3DXPLANE plane = pNode->GetPlane();
-	D3DXVECTOR3 point(pNode->world._41, pNode->world._42, pNode->world._43);
-	NodeBSP* bspnode = new NodeBSP(plane, point);
-	BSPNodes.push_back(bspnode);
-	bspnode->Name = pNode->GetName();
-}
-//----------------------------------------------------
-void Game::RegisterInBSPtree(Node* node, bool isBSP) {
+void Game::AddToBSPTree(Node& node, bool isBSP, bool ready) {
 	D3DXMATRIX identity;
 	D3DXMatrixIdentity(&identity);
-	node->UpdateTransformation(identity);
+	node.UpdateTransformation(identity);
 	if (!isBSP)
-		ParentNodes.push_back(node);
-	else {
-		AddNodeToBSP(node);
-	}
+		m_vParentNodes.push_back(&node);
+	else
+		AddBSPPlanes(node);
+	if (ready)
+		SortTreeNodes();
 }
-//----------------------------------------------------
-void Game::ArrangeBSPTree() {
-	if (NodesToBSP.size() != 0) {
-		BSP = BSPNodes[0];
-		for (int i = 1; i < BSPNodes.size(); i++) {
-			if (BSPNodes[i] != NULL)
-				BSP->AddNode(BSPNodes[i]);
-		}
-		for (int i = 0; i < NodesToBSP.size(); i++) {
-			if (NodesToBSP[i]->m_vMeshes.size())
-				BSP->AddChild(NodesToBSP[i]);
-		}
+
+void Game::AddBSPPlanes(Node& node) {
+	if (node.isPlane)
+	{
+		D3DXPLANE plane = node.GetPlane();
+		D3DXVECTOR3 point(node.world._41, node.world._42, node.world._43);
+		NodeBSP* bspnode = new NodeBSP(plane, point);
+		m_vBSPNodes.push_back(bspnode);
+		bspnode->Name = node.GetName();
+	}
+	m_vNodes.push_back(&node);
+	for (int i = 0; i < node.m_vChilds.size(); i++)
+		AddBSPPlanes(*node.m_vChilds[i]);
+}
+
+void Game::SortTreeNodes(){
+	if (m_vNodes.size() != 0){
+		BSP = m_vBSPNodes[0];
+		for (int i = 1; i < m_vBSPNodes.size(); i++)
+			if (m_vBSPNodes[i] != NULL)
+				BSP->AddNode(m_vBSPNodes[i]);
+		for (int i = 0; i < m_vNodes.size(); i++)
+			if (m_vNodes[i]->m_vMeshes.size())
+				BSP->AddChild(m_vNodes[i]);
 	}
 
-	BSPNodes.clear();
-	NodesToBSP.clear();
+	m_vBSPNodes.clear();
+	m_vNodes.clear();
 }

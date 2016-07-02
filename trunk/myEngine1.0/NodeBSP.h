@@ -4,35 +4,29 @@
 #include <string>
 #include <d3dx9.h>
 
-
 namespace engine {
 	class Node;
 	class Renderer;
-	
 	class NodeBSP {
-	public:
-		NodeBSP(D3DXPLANE plane, D3DXVECTOR3 point);
-		virtual ~NodeBSP();
-
-		NodeBSP* m_pFrontNode;
-		NodeBSP* m_pBackNode;
-
 		D3DXPLANE m_Plane;
 		D3DXVECTOR3 m_PlanePoint;
-
+		NodeBSP* m_pFrontNode;
+		NodeBSP* m_pBackNode;
 		std::vector<Node*> m_vBackObjects;
 		std::vector<Node*> m_vFrontObjects;
-
 		enum Position
 		{
-			BACK, FRONT, INSIDE
+			BACK, FRONT, OVERLAP
 		};
-		Position GetPosition(D3DXVECTOR3 BoundingBox[]);
-		Position GetPosition(D3DXVECTOR3 Position);
+		Position GetBoxPos(D3DXVECTOR3[]);
+		Position GetPointPos(D3DXVECTOR3&);
+	public:
+		NodeBSP(D3DXPLANE, D3DXVECTOR3);
+		~NodeBSP();
 
 		friend class Node;
 		void AddNode(NodeBSP*);
-		void Draw(Renderer* pRenderer, D3DXVECTOR3 CameraPos);
+		void Draw(Renderer&, D3DXVECTOR3);
 		void AddChild(Node*);
 		std::string Name;
 	};

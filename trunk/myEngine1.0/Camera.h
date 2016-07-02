@@ -36,8 +36,8 @@ namespace engine {
 		void MoveRight(float Dist);
 		void MoveUp(float Dist);
 		void MoveInDirection(float Dist, float fDirectionX, float fDirectionY, float fDirectionZ);
-		void RotateDown(float Angle);
-		void RotateRight(float Angle);
+		void Pitch(float Angle);
+		void Yaw(float Angle);
 		void Roll(float Angle);
 
 

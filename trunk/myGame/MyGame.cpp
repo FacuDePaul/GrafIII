@@ -44,8 +44,7 @@ bool Game::Init(engine::Renderer& r){
 	bsp = new engine::Node();
 	importer->ImportScene("bspscene.3ds", *bsp);
 
-	RegisterInBSPtree(bsp, true);
-	ArrangeBSPTree();
+	AddToBSPTree(*bsp, true, true);
 
 	return true;
 }
@@ -72,7 +71,7 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 	}
 
 	if (dInput.mouseDown(engine::Input::MB_1)){
-		//mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 200 * timer.timeBetweenFrames());
+		mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 200 * timer.timeBetweenFrames());
 		//mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 200 * timer.timeBetweenFrames());
 	}
 

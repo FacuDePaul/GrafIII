@@ -68,7 +68,7 @@ void Importer::addBonesToNode(Node* fillNode){
 void Importer::ImportNode(Node& rNode, aiNode* aiNode, const aiScene* aiScene){
 	rNode.SetName(aiNode->mName.C_Str());
 
-	if (rNode.GetName().find("DoMaReBSP") != std::string::npos)
+	if (rNode.GetName().find("BSP") != std::string::npos)
 		rNode.isPlane = true;
 
 	aiMatrix4x4 mx = aiNode->mTransformation.Transpose();
