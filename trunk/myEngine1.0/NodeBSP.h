@@ -12,8 +12,8 @@ namespace engine {
 		D3DXVECTOR3 m_PlanePoint;
 		NodeBSP* m_pFrontNode;
 		NodeBSP* m_pBackNode;
-		std::vector<Node*> m_vBackObjects;
-		std::vector<Node*> m_vFrontObjects;
+		std::vector<Node*> m_vBack;
+		std::vector<Node*> m_vFront;
 		enum Position
 		{
 			BACK, FRONT, OVERLAP

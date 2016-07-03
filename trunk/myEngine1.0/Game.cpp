@@ -67,7 +67,7 @@ void Game::OnSceneShutdown(){
 }
 
 void Game::Frame(engine::Renderer& r, engine::DirectInput&, engine::Timer&) {
-	if (BSP != NULL) {
+	if (BSP) {
 		for (int i = 0; i < m_vParentNodes.size(); i++)
 			m_vParentNodes[i]->Draw(r);
 		BSP->Draw(r, r.c->m_Position);
@@ -76,7 +76,7 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput&, engine::Timer&) {
 
 void Game::AddScene(Scene* newScene){
 
-	if (newScene == NULL)	return;
+	if (!newScene)	return;
 	if (newScene->GetName() == "")
 		newScene->SetName("NewScene-" + (m_mapa.size() + 1));
 	m_mapa[newScene->GetName()] = newScene;
@@ -114,7 +114,7 @@ void Game::SortTreeNodes(){
 	if (m_vNodes.size() != 0){
 		BSP = m_vBSPNodes[0];
 		for (int i = 1; i < m_vBSPNodes.size(); i++)
-			if (m_vBSPNodes[i] != NULL)
+			if (m_vBSPNodes[i])
 				BSP->AddNode(m_vBSPNodes[i]);
 		for (int i = 0; i < m_vNodes.size(); i++)
 			if (m_vNodes[i]->m_vMeshes.size())
