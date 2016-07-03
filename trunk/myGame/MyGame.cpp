@@ -13,7 +13,7 @@ engine::Node* bsp;
 
 bool Game::Init(engine::Renderer& r){
 	mainCamera = r.c;
-	mainCamera->SetPosition(0, 0, -200);
+	mainCamera->SetPosition(0, 10, -50);
 	CreateScene("Scene1");
 	engine::Scene* scene1 = GetScene("Scene1");
 
@@ -29,7 +29,7 @@ bool Game::Init(engine::Renderer& r){
 	mesh = new engine::Cube(r);
 	*/
 	r.SetBackgroundColor(0, 0, 0);
-
+	/*
 	wolf = new engine::Node();
 	if (importer->ImportScene("./tiny/tiny.x", *wolf)){
 		wolf->SetAnimation("");
@@ -40,10 +40,12 @@ bool Game::Init(engine::Renderer& r){
 		delete wolf;
 		wolf = NULL;
 	}
+	*/
 
 	bsp = new engine::Node();
 	importer->ImportScene("bspscene.3ds", *bsp);
 
+	//AddToBSPTree(*wolf, false, false);
 	AddToBSPTree(*bsp, true, true);
 
 	return true;
@@ -97,12 +99,13 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		setGame(false);
 	
 	
-
+	/*
 	if (wolf != NULL)
 	{
 		wolf->Update(timer);
 		wolf->Draw(r);
 	}
+	*/
 		
 }
 
@@ -116,5 +119,10 @@ void Game::DeInit(){
 	if (wolf){
 		delete wolf;
 		wolf = NULL;
+	}
+
+	if (bsp){
+		delete bsp;
+		bsp = NULL;
 	}
 }
