@@ -17,8 +17,8 @@ bool Game::Init(engine::Renderer& r){
 	CreateScene("Scene1");
 	engine::Scene* scene1 = GetScene("Scene1");
 
-	//MyCustomScene* mcs = new MyCustomScene("MyCustomSceneYAY");
-	//AddScene(mcs);
+	MyCustomScene* mcs = new MyCustomScene("MyCustomSceneYAY");
+	AddScene(mcs);
 
 	engine::Importer* importer = engine::Importer::GetInstance();
 

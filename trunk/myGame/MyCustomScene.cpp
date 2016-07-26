@@ -12,17 +12,20 @@ void MyCustomScene::OnStart() {
 	engine::Importer* importer = engine::Importer::GetInstance();
 	importer->ImportScene("Porsche.obj", *porsche);
 
-	porsche->SetScale( 20, 20, 20);
+	porsche->SetScale( 100, 100, 100);
+	porsche->SetPos(100, 0, 0);
 }
 
 void MyCustomScene::OnUpdate(engine::Timer * t) {
 
 }
 
-void MyCustomScene::OnShutdown() {
-	
-}
-
 void MyCustomScene::Draw(engine::Renderer* r) {
 	porsche->Draw(*r);
 }
+
+void MyCustomScene::OnShutdown() {
+	delete porsche;
+	porsche = NULL;
+}
+

@@ -1,4 +1,530 @@
-﻿  MyCustomScene.cpp
+﻿  main.cpp
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\engine.h(40): warning C4251: 'engine::Engine::_t': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Engine'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(30): warning C4251: 'engine::Game::m_mapa': class 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(30): note: see declaration of 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(31): warning C4251: 'engine::Game::m_mIterator': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): warning C4251: 'engine::Game::m_vNodes': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(41): warning C4251: 'engine::Game::m_vParentNodes': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(42): warning C4251: 'engine::Game::m_vBSPNodes': class 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::NodeBSP *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(42): note: see declaration of 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::NodeBSP *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(46): warning C4251: 'engine::Entity::m_sColGroup': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(47): warning C4251: 'engine::Entity::m_sName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(52): warning C4251: 'engine::Entity::m_position': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(56): warning C4251: 'engine::Entity::pivot': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50092): note: see previous definition of 'DXGI_STATUS_OCCLUDED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50101): note: see previous definition of 'DXGI_STATUS_CLIPPED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50110): note: see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50119): note: see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50128): note: see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50137): note: see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50146): note: see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50161): note: see previous definition of 'DXGI_ERROR_INVALID_CALL'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50170): note: see previous definition of 'DXGI_ERROR_NOT_FOUND'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50179): note: see previous definition of 'DXGI_ERROR_MORE_DATA'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50188): note: see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50197): note: see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50206): note: see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50216): note: see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50225): note: see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50235): note: see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50244): note: see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50254): note: see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50263): note: see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50272): note: see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50282): note: see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50291): note: see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50445): note: see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50454): note: see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\frustum.h(22): warning C4251: 'engine::Frustum::m_planes': struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472): note: see declaration of 'D3DXPLANE'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture': class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+          with
+          [
+              _Ty=engine::Texture
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\renderer.h(59): note: see declaration of 'std::vector<engine::Texture,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Texture
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(15): warning C4251: 'engine::Bone::m_Matrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight': class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+          with
+          [
+              _Kty=unsigned int,
+              _Ty=float
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(23): note: see declaration of 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=unsigned int,
+              _Ty=float
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(66): warning C4251: 'engine::Mesh::m_vBoneData': class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+          with
+          [
+              _Ty=engine::BoneInfo *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(66): note: see declaration of 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::BoneInfo *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(43): warning C4800: 'unsigned int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(20): warning C4251: 'engine::Node::m_Pos': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(21): warning C4251: 'engine::Node::m_Sc': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(24): warning C4251: 'engine::Node::m_vMeshes': class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+          with
+          [
+              _Ty=engine::Mesh *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(24): note: see declaration of 'std::vector<engine::Mesh *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Mesh *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(40): warning C4251: 'engine::Node::local': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(41): warning C4251: 'engine::Node::world': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(42): warning C4251: 'engine::Node::defaultMatrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(44): warning C4251: 'engine::Node::m_BoundMin': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(45): warning C4251: 'engine::Node::m_BoundMax': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(47): warning C4251: 'engine::Node::m_vChilds': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(60): warning C4251: 'engine::Node::animations': class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Animation *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(60): note: see declaration of 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Animation *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(19): warning C4251: 'engine::Camera::m_Position': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(20): warning C4251: 'engine::Camera::m_LookAt': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(21): warning C4251: 'engine::Camera::m_Right': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(22): warning C4251: 'engine::Camera::m_Up': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(28): warning C4251: 'engine::Camera::m_MatView': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+  MyGame.cpp
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(30): warning C4251: 'engine::Game::m_mapa': class 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(30): note: see declaration of 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(31): warning C4251: 'engine::Game::m_mIterator': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): warning C4251: 'engine::Game::m_vNodes': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(41): warning C4251: 'engine::Game::m_vParentNodes': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(42): warning C4251: 'engine::Game::m_vBSPNodes': class 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+          with
+          [
+              _Ty=engine::NodeBSP *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(42): note: see declaration of 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::NodeBSP *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(46): warning C4251: 'engine::Entity::m_sColGroup': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(47): warning C4251: 'engine::Entity::m_sName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(52): warning C4251: 'engine::Entity::m_position': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\entity.h(56): warning C4251: 'engine::Entity::pivot': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50092): note: see previous definition of 'DXGI_STATUS_OCCLUDED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50101): note: see previous definition of 'DXGI_STATUS_CLIPPED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50110): note: see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50119): note: see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50128): note: see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50137): note: see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50146): note: see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50161): note: see previous definition of 'DXGI_ERROR_INVALID_CALL'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50170): note: see previous definition of 'DXGI_ERROR_NOT_FOUND'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50179): note: see previous definition of 'DXGI_ERROR_MORE_DATA'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50188): note: see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50197): note: see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50206): note: see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50216): note: see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50225): note: see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50235): note: see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50244): note: see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50254): note: see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50263): note: see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50272): note: see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50282): note: see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50291): note: see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50445): note: see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50454): note: see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\frustum.h(22): warning C4251: 'engine::Frustum::m_planes': struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472): note: see declaration of 'D3DXPLANE'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture': class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+          with
+          [
+              _Ty=engine::Texture
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\renderer.h(59): note: see declaration of 'std::vector<engine::Texture,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Texture
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(15): warning C4251: 'engine::Bone::m_Matrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight': class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+          with
+          [
+              _Kty=unsigned int,
+              _Ty=float
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\bone.h(23): note: see declaration of 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=unsigned int,
+              _Ty=float
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(66): warning C4251: 'engine::Mesh::m_vBoneData': class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+          with
+          [
+              _Ty=engine::BoneInfo *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(66): note: see declaration of 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::BoneInfo *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\mesh.h(43): warning C4800: 'unsigned int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(20): warning C4251: 'engine::Node::m_Pos': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(21): warning C4251: 'engine::Node::m_Sc': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(24): warning C4251: 'engine::Node::m_vMeshes': class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+          with
+          [
+              _Ty=engine::Mesh *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(24): note: see declaration of 'std::vector<engine::Mesh *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Mesh *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(40): warning C4251: 'engine::Node::local': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(41): warning C4251: 'engine::Node::world': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(42): warning C4251: 'engine::Node::defaultMatrix': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(44): warning C4251: 'engine::Node::m_BoundMin': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(45): warning C4251: 'engine::Node::m_BoundMax': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(47): warning C4251: 'engine::Node::m_vChilds': class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\game.h(40): note: see declaration of 'std::vector<engine::Node *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Node *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(60): warning C4251: 'engine::Node::animations': class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Animation *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(60): note: see declaration of 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Animation *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(19): warning C4251: 'engine::Camera::m_Position': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(20): warning C4251: 'engine::Camera::m_LookAt': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(21): warning C4251: 'engine::Camera::m_Right': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(22): warning C4251: 'engine::Camera::m_Up': struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162): note: see declaration of 'D3DXVECTOR3'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\camera.h(28): warning C4251: 'engine::Camera::m_MatView': struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312): note: see declaration of 'D3DXMATRIX'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\importer.h(53): warning C4251: 'engine::Importer::m_pBoneMap': class 'std::map<std::string,engine::Bone *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Bone *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\importer.h(53): note: see declaration of 'std::map<std::string,engine::Bone *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Bone *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\importer.h(67): warning C4251: 'engine::Importer::m_sCurrentModelPath': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\importer.h(70): warning C4251: 'engine::Importer::m_mTextureMap': class 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Texture
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\importer.h(70): note: see declaration of 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Texture
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\animation.h(28): warning C4251: 'engine::Animation::m_strName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\animation.h(29): warning C4251: 'engine::Animation::m_vecFrames': class 'std::vector<engine::Animation::Frame *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+          with
+          [
+              _Ty=engine::Animation::Frame *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\animation.h(29): note: see declaration of 'std::vector<engine::Animation::Frame *,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=engine::Animation::Frame *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(36): warning C4251: 'engine::Scene::m_sName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(37): warning C4251: 'engine::Scene::m_mapMesh': class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Mesh *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(37): note: see declaration of 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Mesh *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(38): warning C4251: 'engine::Scene::m_mIteratorMesh': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Mesh *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Mesh *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(43): warning C4251: 'engine::Scene::m_pClsGroups': class 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+  c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(41): note: see declaration of 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(44): warning C4251: 'engine::Scene::m_pClsGroupsIter': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(47): warning C4251: 'engine::Scene::m_pClsGroupsIterA': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(48): warning C4251: 'engine::Scene::m_pClsGroupsIterB': class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtree(652): note: see declaration of 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=engine::Scene::Mesh3DVector *
+          ]
+  MyCustomScene.cpp
 c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(36): warning C4251: 'engine::Scene::m_sName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
   c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2628): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\scene.h(37): warning C4251: 'engine::Scene::m_mapMesh': class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
@@ -213,4 +739,5 @@ c:\users\luckystrike\documents\github_projects\grafiii\trunk\myengine1.0\node.h(
               _Kty=std::string,
               _Ty=engine::Animation *
           ]
+  Generating Code...
   myGame.vcxproj -> C:\Users\LuckyStrike\Documents\Github_Projects\GrafIII\trunk\Debug\MyGame.exe
