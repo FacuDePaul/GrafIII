@@ -98,13 +98,11 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		setGame(false);
 	
 	
-	
 	if (wolf != NULL)
 	{
 		wolf->Update(timer);
 		wolf->Draw(r);
 	}
-	
 		
 }
 
