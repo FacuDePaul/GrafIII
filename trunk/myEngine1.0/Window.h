@@ -13,11 +13,16 @@ public:
 	static LRESULT CALLBACK WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam );
     Window(HINSTANCE hInstance);
     ~Window();
+
+	bool setWindowName(std::string p);
+	std::string getWindowName();
 	
 private:
 	WNDCLASS * WC;
 	HINSTANCE _hInst;
 	HWND m_hWnd;
 	char* m_pszClassName;
+
+	std::string wndName;
 };
 }

@@ -25,7 +25,6 @@ void Game::DrawScenes(Renderer* m_pRender, Timer* timer){
 
 void Game::CreateScene(std::string str){
 	Scene * escena = new Scene(str);
-	//m_mapa[str] = escena;
 	AddScene(escena);
 }
 

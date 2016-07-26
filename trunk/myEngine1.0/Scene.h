@@ -17,7 +17,7 @@ namespace engine{
 			Scene(std::string name); //le pasamos un nombre para identificarlo
 			~Scene();
 			void Update(Timer*);
-			void Draw(Renderer*);
+			virtual void Draw(Renderer*);
 			void Add(std::string, Mesh*);//agrego entidad
 			void RemoveMesh(Mesh*);//quito entidad
 			void RemoveMesh(std::string);//quito entidad por nombre

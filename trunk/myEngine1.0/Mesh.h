@@ -35,6 +35,8 @@ namespace engine{
 		void DrawBB() const;
 		void Mesh::GetBox(D3DXMATRIX *, D3DXVECTOR3*);
 
+		static int debugedMeshes;
+
 		///
 		void AnimationMeshDraw(Renderer* pRenderer);
 		void AddBoneInfo(BoneInfo* m_pBoneInfo) { m_vBoneData.push_back(m_pBoneInfo); }

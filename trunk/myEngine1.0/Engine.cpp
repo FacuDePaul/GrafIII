@@ -8,6 +8,10 @@
 #include "timer\Timer.h"
 #include "Camera.h"
 #include "Game.h"
+#include "Mesh.h"
+
+
+#include <sstream>
 
 using namespace engine;
 Engine::Engine(HINSTANCE hInst, std::string t, int w, int h):
@@ -43,12 +47,21 @@ void Engine::run(){
 		m_tTimer->measure();
 
 		m_diInput->reacquire();
+
+		Mesh::debugedMeshes = 0;
 		Rendr->BeginFrame();
 		Rendr->c->Update();
 		G->Frame(*Rendr, *m_diInput, *m_tTimer);
 		G->OnSceneUpdate(m_tTimer);
 		G->DrawScenes(Rendr, m_tTimer);
 		Rendr->EndFrame();
+
+		static std::stringstream Title;
+		Title.str("");
+		Title << WndC->getWindowName() << " Draw Counts : " << Mesh::debugedMeshes;
+
+		WndC->setWindowName(Title.str());
+
 		if (PeekMessage(&Mess, NULL, 0, 0, PM_REMOVE)){
 			TranslateMessage(&Mess);
 			DispatchMessage(&Mess);

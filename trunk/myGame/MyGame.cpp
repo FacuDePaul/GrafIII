@@ -46,7 +46,8 @@ bool Game::Init(engine::Renderer& r){
 	importer->ImportScene("bspscene.3ds", *bsp);
 
 	//AddToBSPTree(*wolf, false, false);
-	AddToBSPTree(*bsp, true, true);
+	
+	//AddToBSPTree(*bsp, true, true);
 
 	return true;
 }

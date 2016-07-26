@@ -7,6 +7,7 @@
 #include <algorithm>
 using namespace engine;
 
+int Mesh::debugedMeshes = 0;
 
 Mesh::Mesh(Renderer& r, bool isTextured) : m_rRenderer(r),
 m_pTexture(NoTexture), m_pBB(new D3DXVECTOR3[8]), m_VtxHuesos(NULL), VectorDraw(NULL){
@@ -87,6 +88,8 @@ void Mesh::Draw(){
 	
 	m_rRenderer.SetCurrentTexture(m_pTexture);
 	m_rRenderer.Draw(m_Primitive);
+
+	debugedMeshes++;
 }
 
 

@@ -5,6 +5,16 @@ using namespace engine;
 Window::Window(HINSTANCE hInstance):WC(new WNDCLASS),m_hWnd(NULL),_hInst(hInstance),m_pszClassName("MyEngine"){
 }
 
+bool Window::setWindowName(std::string p) {
+	SetWindowText(m_hWnd, p.c_str());
+	return true;
+}
+
+std::string Window::getWindowName() {
+	return wndName;
+}
+
+
 bool Window::CrearVentana(std::string _t, int _w, int _h) {
 	
 	ZeroMemory(WC, sizeof(*WC));
