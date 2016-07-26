@@ -17,8 +17,8 @@ bool Game::Init(engine::Renderer& r){
 	CreateScene("Scene1");
 	engine::Scene* scene1 = GetScene("Scene1");
 
-	MyCustomScene* mcs = new MyCustomScene("MyCustomSceneYAY");
-	AddScene(mcs);
+	//MyCustomScene* mcs = new MyCustomScene("MyCustomSceneYAY");
+	//AddScene(mcs);
 
 	engine::Importer* importer = engine::Importer::GetInstance();
 
@@ -29,7 +29,7 @@ bool Game::Init(engine::Renderer& r){
 	mesh = new engine::Cube(r);
 	*/
 	r.SetBackgroundColor(0, 0, 0);
-	/*
+	
 	wolf = new engine::Node();
 	if (importer->ImportScene("./tiny/tiny.x", *wolf)){
 		wolf->SetAnimation("");
@@ -40,13 +40,11 @@ bool Game::Init(engine::Renderer& r){
 		delete wolf;
 		wolf = NULL;
 	}
-	*/
 
-	bsp = new engine::Node();
-	importer->ImportScene("bspscene.3ds", *bsp);
+	//bsp = new engine::Node();
+	//importer->ImportScene("bspscene.3ds", *bsp);
 
 	//AddToBSPTree(*wolf, false, false);
-	
 	//AddToBSPTree(*bsp, true, true);
 
 	return true;
@@ -75,7 +73,7 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 
 	if (dInput.mouseDown(engine::Input::MB_1)){
 		mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 200 * timer.timeBetweenFrames());
-		//mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 200 * timer.timeBetweenFrames());
+		mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 200 * timer.timeBetweenFrames());
 	}
 
 	
@@ -100,13 +98,11 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		setGame(false);
 	
 	
-	/*
 	if (wolf != NULL)
 	{
 		wolf->Update(timer);
 		wolf->Draw(r);
 	}
-	*/
 		
 }
 
