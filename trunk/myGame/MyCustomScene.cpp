@@ -14,6 +14,7 @@ void MyCustomScene::OnStart() {
 
 	porsche->SetScale( 100, 100, 100);
 	porsche->SetPos(100, 0, 0);
+	porsche->SetRotation(45, 45, 45);
 }
 
 void MyCustomScene::OnUpdate(engine::Timer * t) {
